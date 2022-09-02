@@ -252,6 +252,19 @@ a {
       display: flex;
       justify-content: space-between;
       margin-bottom: 5px;
+      button {
+        border: 0px;
+        color: #fafafa;
+        transition: all 0.5s;
+        opacity: 0.1;
+      }
+      &:hover {
+        button {
+          background-color: bisque;
+          color: red;
+          opacity: 1;
+        }
+      }
       .commentHeart {
         display: flex;
         align-items: center;

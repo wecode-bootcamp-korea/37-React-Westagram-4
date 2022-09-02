@@ -1,4 +1,16 @@
-function Comment(props) {
+import { useState } from 'react';
+// import './Comment.scss';
+
+function Comment({
+  commentValue,
+  comment,
+  setComment,
+  i,
+  isLike,
+  setIsLike,
+  heart,
+  setHeart,
+}) {
   return (
     <li className="comment">
       <div className="comment-item">
@@ -9,11 +21,27 @@ function Comment(props) {
           />
         </div>
         <span className="idText">JaeHyeon</span>
-        <div className="comment-output-text">{props.commentText}</div>
+        <div className="comment-output-text">{commentValue}</div>
       </div>
       <div className="commentHeart">
-        <i className="fa-regular fa-heart" />
-        <button className="remove-button">X</button>
+        <i
+          className={isLike[i] ? 'fa-solid fa-heart' : 'fa-regular fa-heart'}
+          onClick={() => {
+            let copy = [...isLike];
+            copy[i] = !copy[i];
+            setIsLike(copy);
+          }}
+        />
+        <button
+          className="remove-button"
+          onClick={() => {
+            let copy = [...comment];
+            copy.splice(i, 1);
+            setComment(copy);
+          }}
+        >
+          X
+        </button>
       </div>
     </li>
   );

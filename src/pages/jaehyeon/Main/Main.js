@@ -3,8 +3,11 @@ import Comment from './Comment';
 import './Main.scss';
 
 function MainJaehyeon() {
-  let [comment, setComment] = useState(['와 너무 멋지다']);
+  let [comment, setComment] = useState(['너무 멋지다', '좋네용']);
   let [commentValue, setCommentValue] = useState('');
+  const [isLike, setIsLike] = useState([false, false]);
+  const [heart, setHeart] = useState([isLike]);
+
   return (
     <div className="Mainc">
       <div className="MainContainer">
@@ -120,7 +123,20 @@ function MainJaehyeon() {
               <div className="comments-output-box">
                 <ul className="comments">
                   {comment.map((value, i) => {
-                    return <Comment key={value} commentText={value} />;
+                    return (
+                      <Comment
+                        i={i}
+                        key={i}
+                        //key를 value로 줬더니 key 중복 에러남.
+                        commentValue={value}
+                        comment={comment}
+                        setComment={setComment}
+                        isLike={isLike}
+                        setIsLike={setIsLike}
+                        heart={heart}
+                        setHeart={setHeart}
+                      />
+                    );
                     // key를 index로 받아도 되지만 스트링으로 받는 것을 권장함.
                   })}
                 </ul>
@@ -136,7 +152,6 @@ function MainJaehyeon() {
                 }}
                 value={commentValue}
                 onKeyPress={e => {
-                  setCommentValue(e.target.value);
                   if (e.key === 'Enter' && commentValue.trim().length > 0) {
                     let copy = [...comment];
                     copy.push(commentValue);

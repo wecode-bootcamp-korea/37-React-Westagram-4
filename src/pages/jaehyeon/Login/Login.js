@@ -6,7 +6,7 @@ import './Login.scss';
 function LoginJaehyeon() {
   const navigate = useNavigate();
   let [idValue, setIdValue] = useState('');
-  // let [pwValue, setPwValue] = useState('');
+  let [pwValue, setPwValue] = useState('');
   let [isValid, setIsValid] = useState(false);
 
   return (
@@ -20,11 +20,11 @@ function LoginJaehyeon() {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={e => {
-                setIdValue(e.target.value);
-                // console.log(idValue); // state 변경은 늦게 변경됨.(리액트 만든 사람 맴임.)
-                // idValue.includes('@') && pwValue.length >= 4
-                //   ? setIsValid(true)
-                //   : setIsValid(false);
+                // setIdValue(e.target.value);
+                idValue = e.target.value;
+                idValue.includes('@') && pwValue.length >= 5
+                  ? setIsValid(true)
+                  : setIsValid(false);
               }}
             />
             <input
@@ -32,9 +32,10 @@ function LoginJaehyeon() {
               type="password"
               placeholder="비밀번호"
               onChange={e => {
-                let pwValue = e.target.value;
-                idValue.includes('@') && pwValue.length >= 5 //state변경이 늦게 되는 것 때문에
-                  ? setIsValid(true) //e handler 함수 내에 선언해봤더니 잘 됨.
+                // setPwValue(e.target.value);
+                pwValue = e.target.value;
+                idValue.includes('@') && pwValue.length >= 5
+                  ? setIsValid(true)
                   : setIsValid(false);
               }}
             />
@@ -55,15 +56,13 @@ function LoginJaehyeon() {
           </div>
           <div className="footer">
             <div className="facebook-login">
-              <a href="https://www.naver.com">
-                <i className="fa-brands fa-square-facebook" />
-                <a
-                  href="https://naver.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Fakebook으로 로그인
-                </a>
+              <i className="fa-brands fa-square-facebook" />
+              <a
+                href="https://naver.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fakebook으로 로그인
               </a>
             </div>
             <div className="search-password">

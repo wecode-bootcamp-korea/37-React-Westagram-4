@@ -20,8 +20,8 @@ function LoginJaehyeon() {
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               onChange={e => {
-                // setIdValue(e.target.value);
-                idValue = e.target.value;
+                setIdValue(e.target.value);
+                // idValue = e.target.value;
                 idValue.includes('@') && pwValue.length >= 5
                   ? setIsValid(true)
                   : setIsValid(false);
@@ -32,18 +32,21 @@ function LoginJaehyeon() {
               type="password"
               placeholder="비밀번호"
               onChange={e => {
-                // setPwValue(e.target.value);
-                pwValue = e.target.value;
+                setPwValue(e.target.value);
+                // pwValue = e.target.value;
                 idValue.includes('@') && pwValue.length >= 5
                   ? setIsValid(true)
                   : setIsValid(false);
+                //   (isValid = true)
+                // : (isValid = false);
               }}
             />
             <button
               id="login-button"
               className={isValid ? 'on-button' : 'off-button'}
               onClick={() => {
-                return isValid ? navigate('/Main/jaehyeon') : null; //id에 @들어가고 pw값이 5자 이상일 때 main으로 화면 전환
+                return isValid ? navigate('/Main/jaehyeon') : null;
+                //id에 @들어가고 pw값이 5자 이상일 때 main으로 화면 전환
               }}
             >
               로그인

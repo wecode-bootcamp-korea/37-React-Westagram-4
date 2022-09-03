@@ -7,7 +7,17 @@ function LoginJaehyeon() {
   const navigate = useNavigate();
   let [idValue, setIdValue] = useState('');
   let [pwValue, setPwValue] = useState('');
-  let [isValid, setIsValid] = useState(false);
+  // let [isValid, setIsValid] = useState(true);
+
+  function saveUserId(e) {
+    setIdValue(e.target.value);
+  }
+
+  // function saveUserPw(e) {
+  //   setPwValue(e.target.value);
+  // }
+
+  let isValid = idValue.includes('@') && pwValue.length >= 5 ? false : true;
 
   return (
     <div className="Login">
@@ -19,13 +29,7 @@ function LoginJaehyeon() {
               id="id-input"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={e => {
-                setIdValue(e.target.value);
-                // idValue = e.target.value;
-                idValue.includes('@') && pwValue.length >= 5
-                  ? setIsValid(true)
-                  : setIsValid(false);
-              }}
+              onChange={saveUserId}
             />
             <input
               id="pw-input"
@@ -33,20 +37,14 @@ function LoginJaehyeon() {
               placeholder="비밀번호"
               onChange={e => {
                 setPwValue(e.target.value);
-                // pwValue = e.target.value;
-                idValue.includes('@') && pwValue.length >= 5
-                  ? setIsValid(true)
-                  : setIsValid(false);
-                //   (isValid = true)
-                // : (isValid = false);
+                //여기 안 스테이트는 늦게 업데이트 되고 밖에서 콘솔찍으면 바로바로 업데이트된 값 나옴.
               }}
             />
             <button
               id="login-button"
-              className={isValid ? 'on-button' : 'off-button'}
+              disabled={isValid}
               onClick={() => {
                 return isValid ? navigate('/Main/jaehyeon') : null;
-                //id에 @들어가고 pw값이 5자 이상일 때 main으로 화면 전환
               }}
             >
               로그인

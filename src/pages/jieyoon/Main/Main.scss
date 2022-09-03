@@ -93,10 +93,12 @@ header .headerIcon i {
   font-size: 20px;
 }
 
-li {
+.replyList {
   list-style: none;
+  margin-left: 30px;
   font-size: 13px;
   position: relative;
+  margin-top: 2px;
 }
 
 input:focus {
@@ -256,7 +258,7 @@ main {
 
 .mainTop {
   display: flex;
-  width: 850px;
+  width: 851.5px;
   height: 60px;
   justify-content: space-between;
   background-color: white;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.scss';
 import { Link, BrowserRouter as Router, useNavigate } from 'react-router-dom';
 
@@ -6,6 +6,7 @@ function LoginJieyoon() {
   const navigate = useNavigate();
   const [userId, setUserId] = useState('');
   const [userPassword, setUserPassword] = useState('');
+  const [disable, setDisable] = useState(false);
   const Id = e => {
     setUserId(e.target.value);
   };
@@ -29,6 +30,13 @@ function LoginJieyoon() {
       navigate('/Main/jieyoon');
     }
   };
+  useEffect(() => {
+    if (userId.length > 0 && userPassword.length > 0) {
+      setDisable(false);
+    } else {
+      setDisable(true);
+    }
+  }, [userId, userPassword]);
   return (
     <div className="bodys">
       <div className="container">
@@ -53,7 +61,7 @@ function LoginJieyoon() {
                   type="text"
                   placeholder="전화번호,사용자 이름 또는 이메일"
                   className="userId"
-                  defaultValue={userId}
+                  value={userId}
                   onChange={Id}
                 />
                 <br />
@@ -61,11 +69,16 @@ function LoginJieyoon() {
                   type="password"
                   placeholder="비밀번호"
                   className="userPassword"
-                  defaultValue={userPassword}
+                  value={userPassword}
                   onChange={pass}
                 />
                 <br />
-                <button type="submit" className="loginBtn">
+                <button
+                  type="submit"
+                  className="loginBtn"
+                  disabled={disable}
+                  style={{ background: !disable ? 'skyBlue' : '' }}
+                >
                   로그인
                 </button>
               </form>

@@ -1,16 +1,21 @@
 import React from 'react';
-import Reply from './Reply';
 
 const ReplyBoard = props => {
-  console.log(typeof props.replyArr);
-  // console.log("reply text:", props.replyArr);
-
   return (
-    <>
-      {props.replyArr.map(item => (
-        <Reply item={item} />
+    <div>
+      {props.replyArr.map((item, idx) => (
+        <li className="replyList" key={idx}>
+          <b>jie_yoon </b>
+          {item}
+          <button className="like">
+            <i className="fa-solid fa-heart" onClick={props.liked} />
+          </button>
+          <button className="deleteBtn" onClick={props.deleted}>
+            삭제하기
+          </button>
+        </li>
       ))}
-    </>
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
 import ReplyBoard from './ReplyBoard';
@@ -9,8 +9,21 @@ function MainJieyoon() {
   const [replyArr, setReplyArr] = useState([]);
   const replyCreateBtn = e => {
     e.preventDefault();
-    setReplyArr([...replyArr, reply]);
+    setReplyArr(prev => [...prev, reply]);
+    setReply('');
   };
+
+  const liked = e => {
+    const like = e.target;
+    like.classList.toggle('active');
+    like.classList.contains('active')
+      ? (like.style.color = 'red')
+      : (like.style.color = 'white');
+  };
+  const deleted = e => {
+    e.target.parentNode.remove();
+  };
+
   return (
     <div className="bodyz">
       <header id="header">
@@ -161,18 +174,22 @@ function MainJieyoon() {
               <li className="replyList">
                 <b>ha_yoon</b> 우와
                 <button className="like">
-                  <i className="fa-solid fa-heart" />
+                  <i className="fa-solid fa-heart" onClick={liked} />
                 </button>
-                <button className="deleteBtn">삭제하기</button>
+                <button className="deleteBtn" onClick={deleted}>
+                  삭제하기
+                </button>
               </li>
               <li className="replyList">
                 <b>tae_yoon</b> ??
                 <button className="like">
-                  <i className="fa-solid fa-heart" />
+                  <i className="fa-solid fa-heart" onClick={liked} />
                 </button>
-                <button className="deleteBtn">삭제하기</button>
+                <button className="deleteBtn" onClick={deleted}>
+                  삭제하기
+                </button>
               </li>
-              <ReplyBoard replyArr={replyArr} />
+              <ReplyBoard replyArr={replyArr} liked={liked} deleted={deleted} />
             </ul>
             <p>42분 전</p>
           </div>
@@ -183,7 +200,7 @@ function MainJieyoon() {
                 className="mainReplyCreate"
                 type="text"
                 placeholder="댓글달기..."
-                defaultValue={reply}
+                value={reply}
                 onChange={e => setReply(e.target.value)}
               />
               <button

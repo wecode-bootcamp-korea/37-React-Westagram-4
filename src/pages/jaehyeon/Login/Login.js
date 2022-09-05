@@ -5,19 +5,36 @@ import './Login.scss';
 
 function LoginJaehyeon() {
   const navigate = useNavigate();
-  let [idValue, setIdValue] = useState('');
-  let [pwValue, setPwValue] = useState('');
-  // let [isValid, setIsValid] = useState(true);
+  // let [idValue, setIdValue] = useState('');
+  // let [pwValue, setPwValue] = useState('');
+  const [inputValues, setInputValues] = useState({
+    email: '',
+    password: '',
+  });
 
-  function saveUserId(e) {
-    setIdValue(e.target.value);
-  }
+  // const handleEmail = event => {
+  //   const { value } = event.target;
+  //   setInputValues({ ...inputValues, email: value });
+  // };
 
-  // function saveUserPw(e) {
-  //   setPwValue(e.target.value);
+  // const handlePassword = event => {
+  //   const { value } = event.target;
+  //   setInputValues({ ...inputValues, password: value });
+  // }; 위 두 코드 합치면 아래처럼 됨.
+  const handleInput = event => {
+    const { name, value } = event.target;
+    setInputValues({ ...inputValues, [name]: value });
+    console.log(event.target);
+  }; // 객체의 name이란 키에 value 부여.
+
+  // function saveUserId(e) {
+  //   setIdValue(e.target.value);
   // }
 
-  let isValid = idValue.includes('@') && pwValue.length >= 5 ? false : true;
+  let isValid =
+    inputValues.email.includes('@') && inputValues.password.length >= 5
+      ? false
+      : true;
 
   return (
     <div className="Login">
@@ -27,24 +44,23 @@ function LoginJaehyeon() {
           <div className="login-box">
             <input
               id="id-input"
+              name="email"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              onChange={saveUserId}
+              onChange={handleInput}
             />
             <input
               id="pw-input"
+              name="password"
               type="password"
               placeholder="비밀번호"
-              onChange={e => {
-                setPwValue(e.target.value);
-                //여기 안 스테이트는 늦게 업데이트 되고 밖에서 콘솔찍으면 바로바로 업데이트된 값 나옴.
-              }}
+              onChange={handleInput}
             />
             <button
               id="login-button"
               disabled={isValid}
               onClick={() => {
-                return isValid ? navigate('/Main/jaehyeon') : null;
+                return navigate('/Main/jaehyeon');
               }}
             >
               로그인

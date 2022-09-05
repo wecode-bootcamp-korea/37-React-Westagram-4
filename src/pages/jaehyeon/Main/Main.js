@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Comment from './Comment';
+import Footer from './Footer';
 import './Main.scss';
 
 function MainJaehyeon() {
@@ -8,9 +9,26 @@ function MainJaehyeon() {
   const [isLike, setIsLike] = useState([false, false]);
   const [heart, setHeart] = useState([isLike]);
 
+  function changeBtnDisabled() {
+    if (commentValue.trim().length > 0) {
+      let copy = [...comment];
+      copy.push(commentValue);
+      setComment(copy);
+      setCommentValue('');
+    }
+  }
+  function handleComment(e) {
+    if (e.key === 'Enter' && commentValue.trim().length > 0) {
+      let copy = [...comment];
+      copy.push(commentValue);
+      setComment(copy);
+      setCommentValue('');
+    }
+  }
+
   return (
-    <div className="Mainc">
-      <div className="MainContainer">
+    <div className="MainContainer">
+      <div className="Main">
         <div className="nav">
           <div className="nav-menu">
             <div className="nav-left">
@@ -151,27 +169,9 @@ function MainJaehyeon() {
                   setCommentValue(e.target.value);
                 }}
                 value={commentValue}
-                onKeyPress={e => {
-                  if (e.key === 'Enter' && commentValue.trim().length > 0) {
-                    let copy = [...comment];
-                    copy.push(commentValue);
-                    setComment(copy);
-                    setCommentValue('');
-                  }
-                }}
+                onKeyPress={handleComment}
               />
-              <button
-                onClick={() => {
-                  if (commentValue.trim().length > 0) {
-                    let copy = [...comment];
-                    copy.push(commentValue);
-                    setComment(copy);
-                    setCommentValue('');
-                  }
-                }}
-              >
-                게시
-              </button>
+              <button onClick={changeBtnDisabled}>게시</button>
             </div>
           </div>
           <div className="main-right">
@@ -342,8 +342,7 @@ function MainJaehyeon() {
             </div>
             <div>
               <div className="info">
-                Westagram 정보 지원 홍보센터 API 채용정보 개인정보처리방침 약관
-                디렉터리 프로필 해시태그 언어
+                <Footer />
               </div>
               <div className="info">C 2019 INSTAGRAM</div>
             </div>

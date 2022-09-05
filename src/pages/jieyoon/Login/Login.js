@@ -1,18 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
-import { Link, BrowserRouter as Router, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function LoginJieyoon() {
   const navigate = useNavigate();
   const [userId, setUserId] = useState('');
   const [userPassword, setUserPassword] = useState('');
-  const [disable, setDisable] = useState(false);
-  const Id = e => {
-    setUserId(e.target.value);
-  };
-  const pass = e => {
-    setUserPassword(e.target.value);
-  };
+
   const isEmail = email => {
     const emailRegex =
       /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
@@ -30,13 +24,9 @@ function LoginJieyoon() {
       navigate('/Main/jieyoon');
     }
   };
-  useEffect(() => {
-    if (userId.length > 0 && userPassword.length > 0) {
-      setDisable(false);
-    } else {
-      setDisable(true);
-    }
-  }, [userId, userPassword]);
+
+  const isValid = userId.length > 0 && userPassword.length > 0;
+
   return (
     <div className="bodys">
       <div className="container">
@@ -62,7 +52,7 @@ function LoginJieyoon() {
                   placeholder="전화번호,사용자 이름 또는 이메일"
                   className="userId"
                   value={userId}
-                  onChange={Id}
+                  onChange={e => setUserId(e.target.value)}
                 />
                 <br />
                 <input
@@ -70,14 +60,14 @@ function LoginJieyoon() {
                   placeholder="비밀번호"
                   className="userPassword"
                   value={userPassword}
-                  onChange={pass}
+                  onChange={e => setUserPassword(e.target.value)}
                 />
                 <br />
                 <button
                   type="submit"
                   className="loginBtn"
-                  disabled={disable}
-                  style={{ background: !disable ? 'skyBlue' : '' }}
+                  disabled={!isValid}
+                  style={{ background: isValid ? 'skyBlue' : '' }}
                 >
                   로그인
                 </button>
@@ -129,12 +119,11 @@ function LoginJieyoon() {
         </div>
 
         <div className="footer">
-          Meta &nbsp 소개 &nbsp 블로그 &nbsp 채용 정보 &nbsp 도움말 &nbsp API
-          &nbsp 개인정보처리방침 &nbsp 약관 &nbsp 인기 계정 &nbsp 해시태그 &nbsp
-          위치 &nbsp Instagram Lite &nbsp 연락처 업로드 & 비사용자 &nbsp
+          Meta 소개 블로그 채용 정보 도움말 API 개인정보처리방침 약관 인기 계정
+          해시태그 위치 Instagram Lite 연락처 업로드 비사용자
           <br />
-          댄스 &nbsp 식음료 &nbsp 집 및 정원 &nbsp 음악 &nbsp 시각 예술 &nbsp
-          한국어 &nbsp © 2022 Instagram from Meta
+          댄스 식음료 집 및 정원 음악 시각 예술 한국어 © 2022 Instagram from
+          Meta
         </div>
       </div>
     </div>

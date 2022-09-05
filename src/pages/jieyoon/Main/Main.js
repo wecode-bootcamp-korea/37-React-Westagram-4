@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-
-import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
+import React, { useState } from 'react';
 import ReplyBoard from './ReplyBoard';
+import { Link } from 'react-router-dom';
 import './Main.scss';
 
 function MainJieyoon() {

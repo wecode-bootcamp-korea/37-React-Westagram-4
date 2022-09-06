@@ -67,7 +67,9 @@ function LoginJieyoon() {
                   type="submit"
                   className="loginBtn"
                   disabled={!isValid}
-                  style={{ background: isValid ? 'skyBlue' : '' }}
+                  style={{
+                    background: isValid ? 'skyBlue' : 'rgb(244, 244, 244)',
+                  }}
                 >
                   로그인
                 </button>
@@ -85,7 +87,7 @@ function LoginJieyoon() {
                 </a>
               </div>
               <div className="passCheck">
-                <a href="">비밀번호를 잊으셨나요?</a>
+                <a>비밀번호를 잊으셨나요?</a>
               </div>
             </div>
 

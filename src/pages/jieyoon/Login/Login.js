@@ -87,7 +87,7 @@ function LoginJieyoon() {
                 </a>
               </div>
               <div className="passCheck">
-                <a>비밀번호를 잊으셨나요?</a>
+                <Link to="/Member">비밀번호를 잊으셨나요?</Link>
               </div>
             </div>
 

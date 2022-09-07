@@ -90,7 +90,7 @@ function LoginJinsoo() {
           </div>
           <div className="last">
             <a href="" className="idontknow">
-              비밀번호를 잊으셨나요?
+              비밀번호를 잊으셨나요 ?
             </a>
           </div>
         </div>

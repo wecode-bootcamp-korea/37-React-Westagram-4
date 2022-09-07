@@ -24,7 +24,6 @@ function LoginJaehyeon() {
   const handleInput = event => {
     const { name, value } = event.target;
     setInputValues({ ...inputValues, [name]: value });
-    console.log(event.target);
   }; // 객체의 name이란 키에 value 부여.
 
   // function saveUserId(e) {

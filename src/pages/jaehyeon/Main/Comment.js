@@ -1,5 +1,6 @@
 // import { useState } from 'react';
 // import './Comment.scss';
+import profile from '../../../assets/jaehyeon/profile.jpg';
 
 function Comment({
   commentValue,
@@ -10,17 +11,16 @@ function Comment({
   setIsLike,
   heart,
   setHeart,
+  visitorName,
+  visitorImg,
 }) {
   return (
     <li className="comment">
       <div className="comment-item">
         <div className="comment-profile">
-          <img
-            src="https://images.unsplash.com/photo-1660878561965-b8ce1342c507?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM5fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-            alt=""
-          />
+          <img src={visitorImg ? visitorImg : profile} alt="" />
         </div>
-        <span className="idText">JaeHyeon</span>
+        <span className="idText">{visitorName ? visitorName : 'Jaehyeon'}</span>
         <div className="comment-output-text">{commentValue}</div>
       </div>
       <div className="commentHeart">
@@ -34,6 +34,7 @@ function Comment({
         />
         <button
           className="remove-button"
+          disabled={!visitorImg ? false : true}
           onClick={() => {
             let copy = [...comment];
             copy.splice(i, 1);

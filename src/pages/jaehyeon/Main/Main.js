@@ -1,30 +1,22 @@
-import React, { useState } from 'react';
-import Comment from './Comment';
-import Footer from './Footer';
+import React, { useEffect, useState } from 'react';
+
+import Feed from './Feed';
+import MainRight from './MainRight';
+
 import './Main.scss';
 
 function MainJaehyeon() {
-  let [comment, setComment] = useState(['너무 멋지다', '좋네용']);
-  let [commentValue, setCommentValue] = useState('');
-  const [isLike, setIsLike] = useState([false, false]);
-  const [heart, setHeart] = useState([isLike]);
+  const [feedList, setFeedList] = useState([]);
 
-  function changeBtnDisabled() {
-    if (commentValue.trim().length > 0) {
-      let copy = [...comment];
-      copy.push(commentValue);
-      setComment(copy);
-      setCommentValue('');
-    }
-  }
-  function handleComment(e) {
-    if (e.key === 'Enter' && commentValue.trim().length > 0) {
-      let copy = [...comment];
-      copy.push(commentValue);
-      setComment(copy);
-      setCommentValue('');
-    }
-  }
+  useEffect(() => {
+    fetch('/data/feedData.json', {
+      method: 'GET',
+    })
+      .then(res => res.json()) //res.json()콘솔 찍어보면 promise 출력 됨.
+      .then(data => {
+        setFeedList(data);
+      });
+  }, []);
 
   return (
     <div className="MainContainer">
@@ -109,244 +101,11 @@ function MainJaehyeon() {
         </div>
         <div className="main">
           <div className="feeds">
-            <article>
-              <div className="feed-title">
-                <div className="profile">
-                  <div className="profile-logo" />
-                  <div className="idText">profile</div>
-                </div>
-                <div className="feed-title-right">
-                  <i className="fa-brands fa-free-code-camp" />
-                </div>
-              </div>
-              <div className="feed-image">
-                <img
-                  src="https://images.unsplash.com/photo-1660866838314-4ece130b4776?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMxfDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                  alt="hi"
-                />
-              </div>
-            </article>
-            <div className="feed-footer">
-              <div className="footer-top">
-                <div>
-                  <i className="fa-solid fa-heart" />
-                  <i className="fa-regular fa-comment" />
-                  <i className="fa-solid fa-arrow-up-from-bracket" />
-                </div>
-                <div>클립</div>
-              </div>
-              <div>
-                <span className="idText">Ronnie</span> 님 외 1명이 좋아합니다
-              </div>
-              <div className="comments-output-box">
-                <ul className="comments">
-                  {comment.map((value, i) => {
-                    return (
-                      <Comment
-                        i={i}
-                        key={i}
-                        //key를 value로 줬더니 key 중복 에러남.
-                        commentValue={value}
-                        comment={comment}
-                        setComment={setComment}
-                        isLike={isLike}
-                        setIsLike={setIsLike}
-                        heart={heart}
-                        setHeart={setHeart}
-                      />
-                    );
-                    // key를 index로 받아도 되지만 스트링으로 받는 것을 권장함.
-                  })}
-                </ul>
-              </div>
-            </div>
-            <div className="comment-box">
-              <input
-                className="comment-input"
-                type="text"
-                placeholder="댓글 달기..."
-                onChange={e => {
-                  setCommentValue(e.target.value);
-                }}
-                value={commentValue}
-                onKeyPress={handleComment}
-              />
-              <button onClick={changeBtnDisabled}>게시</button>
-            </div>
+            {feedList.map(list => {
+              return <Feed key={list.id} list={list} />;
+            })}
           </div>
-          <div className="main-right">
-            <div className="main-right-top">
-              <div className="top-profile">
-                <img
-                  src="https://images.unsplash.com/photo-1660878561965-b8ce1342c507?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM5fDZzTVZqVExTa2VRfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                  alt=""
-                />
-              </div>
-              <div className="top-profile-text">
-                <span className="idText">JaeHyeon_wecode</span>
-
-                <span>Wecode | 위코드</span>
-              </div>
-            </div>
-            <div className="main-right-mid">
-              <div className="main-right-title">
-                <div>스토리</div>
-                <div>모두 보기</div>
-              </div>
-              <div className="recom-list">
-                <div className="recom-box">
-                  <div className="img-box">
-                    <img src="/images/jaehyeon/profile.jpg" alt="" />
-                  </div>
-                  <div>
-                    <span className="idText">JaeHyeon_wecode</span>
-                    <br />
-                    <span>Wecode | 위코드</span>
-                  </div>
-                </div>
-              </div>
-              <div className="recom-list">
-                <div className="recom-box">
-                  <div className="img-box">
-                    <div>
-                      <img src="/images/jaehyeon/profile.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div>
-                    <span className="idText">JaeHyeon_wecode</span>
-                    <br />
-                    <span>Wecode | 위코드</span>
-                  </div>
-                </div>
-              </div>
-              <div className="recom-list">
-                <div className="recom-box">
-                  <div className="img-box">
-                    <div>
-                      <img src="/images/jaehyeon/profile.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div>
-                    <span id="name" className="idText">
-                      JaeHyeon_wecode
-                    </span>
-                    <br />
-                    <span>Wecode | 위코드</span>
-                  </div>
-                </div>
-              </div>
-              <div className="recom-list">
-                <div className="recom-box">
-                  <div className="img-box">
-                    <div>
-                      <img src="/images/jaehyeon/profile.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div>
-                    <span className="idText">JaeHyeon_wecode</span>
-                    <br />
-                    <span>Wecode | 위코드</span>
-                  </div>
-                </div>
-              </div>
-              <div className="recom-list">
-                <div className="recom-box">
-                  <div className="img-box">
-                    <div>
-                      <img src="./images/profile.jpg" alt="" />
-                    </div>
-                  </div>
-                  <div>
-                    <span className="idText">JaeHyeon_wecode</span>
-                    <br />
-                    <span>Wecode | 위코드</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="main-right-bot">
-              <div className="bot-title">
-                <div>회원님을 위한 추천</div>
-                <div id="show-more">모두 보기</div>
-              </div>
-              <div className="mr-bot-box">
-                <div className="recom-img-box">
-                  <img
-                    className="recom-img"
-                    src="https://images.unsplash.com/photo-1660474220980-4727894eec1a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1767&q=80"
-                    alt=""
-                  />
-                </div>
-                <div className="recom-txt-box">
-                  <span className="idText">Crong</span>
-                  <br />
-                  <span>who loves panguin</span>
-                </div>
-              </div>
-              <div className="mr-bot-box">
-                <div className="recom-img-box">
-                  <img
-                    className="recom-img"
-                    src="https://images.unsplash.com/photo-1598439210625-5067c578f3f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVuZ3VpbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
-                    alt=""
-                  />
-                </div>
-                <div className="recom-txt-box">
-                  <span className="idText">Pororo</span>
-                  <br />
-                  <span>who loves rizard</span>
-                </div>
-              </div>
-              <div className="mr-bot-box">
-                <div className="recom-img-box">
-                  <img
-                    className="recom-img"
-                    src="https://images.unsplash.com/photo-1589656966895-2f33e7653819?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cG9sYXIlMjBiZWFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                    alt=""
-                  />
-                </div>
-                <div className="recom-txt-box">
-                  <span className="idText">Phobi</span>
-                  <br />
-                  <span>북극의 왕 glorious king Phobi</span>
-                </div>
-              </div>
-              <div className="mr-bot-box">
-                <div className="recom-img-box">
-                  <img
-                    className="recom-img"
-                    src="https://images.unsplash.com/photo-1659968652648-9ec33df989d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHVycGxlJTIwa2luZ3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60"
-                    alt=""
-                  />
-                </div>
-                <div className="recom-txt-box">
-                  <span className="idText">Boradori</span>
-                  <br />
-                  <span>the forgotten king..</span>
-                </div>
-              </div>
-              <div className="mr-bot-box">
-                <div className="recom-img-box">
-                  <img
-                    className="recom-img"
-                    src="https://velog.velcdn.com/images/inyong_pang/post/f0ea605d-c2d9-460c-aedc-a0ec77e6759f/wecode.png"
-                    alt=""
-                  />
-                </div>
-                <div className="recom-txt-box">
-                  <span className="idText">Wecode</span>
-                  <br />
-                  <span>Welcome to heaven of coders</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <div className="info">
-                <Footer />
-              </div>
-              <div className="info">C 2019 INSTAGRAM</div>
-            </div>
-          </div>
+          <MainRight />
         </div>
       </div>
     </div>

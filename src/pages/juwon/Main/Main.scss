@@ -1,0 +1,527 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
+}
+
+/* 탑박스(nav 박스) */
+
+/* 본문 */
+
+.contents {
+  width: 822px;
+  height: 1500px;
+  border: none;
+  position: absolute;
+  top: 74px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: 'proxima-nova', sans-serif;
+}
+
+/* 왼쪽박스        */
+
+.mainBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 470px;
+}
+
+.story {
+  width: 470px;
+  height: 119px;
+  border: 1px solid #dbdbdb;
+  background-color: white;
+  border-radius: 7.5px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+
+.storyBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: none;
+  margin: 7px;
+}
+
+.storyBox:hover {
+  cursor: pointer;
+}
+
+.storyImage {
+  width: 61px;
+  height: 61px;
+  margin-bottom: 5px;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(to right, red 0%, orange 100%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.storyImage img {
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  border: 1px solid #dbdbdb;
+}
+
+.storyNick {
+  font-weight: normal;
+  font-size: 12px;
+  color: #262626;
+}
+
+.mainContents {
+  margin-top: 16px;
+  width: 470px;
+  border: 1px solid #dbdbdb;
+  background-color: white;
+  border-radius: 7.5px;
+}
+
+.bottomTopBox {
+  width: 470px;
+  height: 58.5px;
+  border-bottom: 0.5px solid #dbdbdb;
+  border-radius: 7.5px;
+  display: flex;
+  align-items: center;
+  padding-left: 7px;
+  position: relative;
+}
+
+.feedPofileIcon {
+  width: 33px;
+  height: 33px;
+  border-radius: 100%;
+  border: 1px solid #dbdbdb;
+  margin: 5px;
+}
+
+.feedPofileIcon:hover {
+  cursor: pointer;
+}
+
+.feedNick {
+  margin: 5px;
+  font-size: 12.5px;
+  font-weight: bold;
+}
+
+.feedNick:hover {
+  cursor: pointer;
+}
+
+.feedMenuIcon {
+  width: 17px;
+  position: absolute;
+  right: 0;
+  margin-right: 16px;
+}
+
+.feedMenuIcon:hover {
+  cursor: pointer;
+}
+
+.bottomMiddleBox {
+  width: 469px;
+  height: 586.5px;
+  background-image: url(../../../assets/juwon/KakaoTalk_Photo_2022-08-22-22-44-50.jpeg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bottomBottomBox {
+  width: 469px;
+  border: none;
+  position: relative;
+}
+
+.feedBtnBox {
+  width: 469px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+}
+
+.feedBtn {
+  width: 22px;
+  margin: 9px;
+}
+
+.feedBtn:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+#saveBtn {
+  position: absolute;
+  right: 0px;
+}
+
+.likeCountBox {
+  width: 469px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-left: 10px;
+  color: #262626;
+  font-weight: normal;
+  font-size: 14px;
+}
+
+.likingIcon {
+  width: 23px;
+  height: 23px;
+  border-radius: 100%;
+  border: 1px solid #dbdbdb;
+  margin: 3px;
+}
+
+.likingIcon:hover {
+  cursor: pointer;
+}
+
+.likeCountBox span {
+  font-weight: bold;
+}
+
+.likeCountBox:hover {
+  cursor: pointer;
+}
+
+.likingId {
+  margin-left: 5px;
+}
+
+.commentBox {
+  width: 469px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #262626;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.commentInner {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.commentInner:hover > .commentDelete {
+  opacity: 100%;
+}
+
+.commentId {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.commentId:hover {
+  cursor: pointer;
+}
+
+.commentHeart {
+  position: absolute;
+  right: 11px;
+  width: 11px;
+}
+
+.commentHeart:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.commentDelete {
+  position: absolute;
+  right: 30px;
+  width: 9px;
+  opacity: 0%;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.commentDelete:hover {
+  cursor: pointer;
+}
+
+.hourAgoBox {
+  width: 469px;
+  height: 18px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+#agoText {
+  font-size: 11px;
+  color: #8e8e8e;
+}
+
+#agoText:hover {
+  cursor: pointer;
+}
+
+#translation {
+  font-size: 12px;
+  font-weight: bold;
+  color: #292929;
+}
+
+#translation {
+  cursor: pointer;
+}
+
+.commentInputBox {
+  width: 469px;
+  height: 49px;
+  bottom: 0px;
+  border-top: 1px solid #dbdbdb;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.emoticon {
+  width: 22px;
+  margin-right: 10px;
+}
+.emoticon:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.commentInput {
+  width: 360px;
+  border: none;
+  font-size: 14px;
+  color: #292929;
+}
+
+.commentInput:focus {
+  outline: none;
+}
+
+.commentInput::placeholder {
+  color: #828282;
+}
+
+.commentPostDisabled {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0095f6;
+  position: absolute;
+  right: 30px;
+  opacity: 50%;
+  border: none;
+  background-color: #efefef;
+}
+
+.commentPostEnabled {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0095f6;
+  position: absolute;
+  right: 30px;
+  opacity: 100%;
+  border: none;
+  background-color: #efefef;
+}
+
+.commentPost:hover {
+  cursor: pointer;
+  opacity: 50%;
+}
+
+/* 오른쪽박스 */
+
+.innerRightBox {
+  width: 360px;
+  height: 638px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+@media screen and (max-width: 999px) {
+  .innerRightBox {
+    display: none;
+  }
+}
+
+.rightTopBox {
+  width: 319px;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  border: none;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.bigProfileImg {
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  border: 1px solid #dbdbdb;
+  margin-right: 17px;
+}
+
+.bigProfileImg:hover {
+  cursor: pointer;
+}
+
+.myNickName {
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.myNickName:hover {
+  cursor: pointer;
+}
+
+.switchBtn {
+  font-size: 12px;
+  font-weight: bold;
+  color: #0095f6;
+  position: absolute;
+  right: 0;
+}
+
+.switchBtn:hover {
+  cursor: pointer;
+}
+
+.rightMiddleBox {
+  width: 319px;
+  height: 279px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.suggestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#suggestion {
+  color: #8e8e8e;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#seeAll {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#seeAll:hover {
+  cursor: pointer;
+}
+
+.suggestionList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.suggestions {
+  display: flex;
+  flex-direction: row;
+  height: 48px;
+  align-items: center;
+}
+.suIconBox {
+  padding-top: 7px;
+}
+.suIcon {
+  width: 33px;
+  height: 33px;
+  border-radius: 100%;
+  border: 1px solid #dbdbdb;
+  margin: 5px;
+}
+
+.suIcon:hover {
+  cursor: pointer;
+}
+
+.suNickBox {
+  margin-left: 5px;
+}
+
+.suNick {
+  margin-bottom: 3px;
+  color: #262626;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.suNick:hover {
+  cursor: pointer;
+}
+
+.suText {
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+.followBox {
+  font-size: 12px;
+  font-weight: bold;
+  color: #0095f6;
+  position: absolute;
+  right: 0;
+}
+
+.followBox:hover {
+  cursor: pointer;
+}
+
+.rightBottomBox {
+  width: 319px;
+  height: 112.5px;
+  border: none;
+}
+
+.links {
+  font-size: 12.5px;
+  color: #c7c7c7;
+  width: 319px;
+  height: 40px;
+  margin-top: 15px;
+
+  a {
+    margin: 2px;
+  }
+
+  a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.company {
+  font-size: 12.5px;
+  color: #c7c7c7;
+  margin-top: 12px;
+}

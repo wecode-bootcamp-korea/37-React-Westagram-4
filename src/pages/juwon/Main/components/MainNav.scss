@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+.topBox {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid #dbdbdb;
+  background-color: white;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 10;
+  .westagram {
+    max-width: calc(270px);
+    width: 100%;
+    font-family: 'Dokdo', cursive;
+    font-size: 23px;
+    font-weight: bold;
+    margin-left: 33px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .arrow {
+      width: 9px;
+      height: 9px;
+      margin-left: 8px;
+    }
+    .arrow:hover {
+      cursor: pointer;
+    }
+  }
+
+  .searchInputBox {
+    border: 1px solid white;
+    border-radius: 8px;
+    width: 270px;
+    height: 38px;
+    background-color: #efefef;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+
+    .searchInput {
+      border: none;
+      background-color: #efefef;
+      width: 270px;
+      height: 25px;
+      font-size: 16px;
+      background-image: url(../../../../assets/juwon/search-interface-symbol.png);
+      background-repeat: no-repeat;
+      background-size: 15px;
+      background-position-y: center;
+      background-position-x: 6px;
+      font-family: 'proxima-nova', sans-serif;
+    }
+
+    .searchInput::placeholder {
+      color: #8e8e8e;
+      font-weight: lighter;
+    }
+
+    .searchInput:focus {
+      outline: none;
+    }
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+
+    img {
+      width: 22px;
+      height: 22px;
+      margin: 12px;
+    }
+
+    img:hover {
+      cursor: pointer;
+    }
+
+    #profile {
+      width: 22px;
+      height: 22px;
+      border-radius: 100%;
+    }
+
+    .navBtnBorder {
+      width: 26px;
+      height: 26px;
+      background-color: white;
+      border-radius: 100%;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+    }
+
+    .navBtnBorder img {
+      width: 24px;
+      height: 24px;
+      border: 1px solid #dbdbdb;
+    }
+
+    .navBtnBorder img:hover {
+      cursor: pointer;
+    }
+  }
+  @media screen and (max-width: 650px) {
+    .searchInputBox {
+      display: none;
+    }
+  }
+
+  /* 검색창 팝업 */
+
+  .recentSearch {
+    position: fixed;
+    top: 59px;
+    display: none;
+    flex-direction: column;
+    z-index: 10;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 6px;
+    font-family: 'proxima-nova', sans-serif;
+  }
+
+  .recentTextBox {
+    width: 360px;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+    padding-top: 5px;
+  }
+  .recentText {
+    font-size: 16px;
+    font-weight: bold;
+    color: #292929;
+  }
+
+  .clearAll {
+    font-size: 15px;
+    font-weight: 500;
+    color: #0095f6;
+  }
+
+  .recentProfile {
+    width: 360px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+  }
+
+  .recentProfilePic {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #dbdbdb;
+    border-radius: 100%;
+    margin-left: 15px;
+  }
+
+  .recentNickBox {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .recentNickName {
+    color: #292929;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .recentName {
+    color: #8e8e8e;
+    font-size: 14px;
+    margin-top: 3px;
+  }
+
+  .closeBtn {
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    right: 25px;
+  }
+
+  /* 프로필메뉴 팝업 */
+
+  .navMenuBox {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 58px;
+    right: 30px;
+    border-radius: 8px;
+    background-color: white;
+    z-index: 10;
+    font-family: 'proxima-nova', sans-serif;
+    color: #292929;
+    font-size: 14px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .navMenuInnerBox {
+    display: flex;
+    align-items: center;
+    width: 230px;
+    height: 39px;
+    border: none;
+  }
+
+  .MenuIcon {
+    width: 16px;
+    margin-left: 12px;
+  }
+
+  .navMenuInnerBox p {
+    margin: 0px;
+    margin-top: 4px;
+    margin-left: 12px;
+    margin-bottom: 4px;
+  }
+
+  .navMenuInnerBox:hover {
+    background-color: #fafafa;
+    cursor: pointer;
+  }
+
+  #logout {
+    border-top: 1px solid #dbdbdb;
+    height: 41px;
+    margin: 2px;
+  }
+}

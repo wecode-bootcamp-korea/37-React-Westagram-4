@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Nav from './components/Nav/Nav';
 
 // 재현님의 컴포넌트
 import LoginJaehyeon from './pages/jaehyeon/Login/Login';
@@ -18,7 +17,6 @@ import MainJuwon from './pages/juwon/Main/Main';
 const Router = () => {
   return (
     <BrowserRouter>
-      <Nav />
       <Routes>
         <Route path="/" element={<LoginJaehyeon />} />
         <Route path="/Main/jaehyeon" element={<MainJaehyeon />} />

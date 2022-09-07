@@ -94,7 +94,7 @@ function SideContents() {
       </div>
       <div className="rightBottomBox">
         <div className="links">
-          <a>About </a>· <a>Help </a>· <a>Press </a>· <a>API </a>·<a>Jobs </a>·{' '}
+          <a>About </a>· <a>Help </a>· <a>Press </a>· <a>API </a>·<a>Jobs </a>·
           <a>Privacy </a>· <a>Terms </a>· <a>Location </a>·<a>Language </a>
         </div>
         <div className="company">@ 2022 INSTAGRAM FROM META</div>

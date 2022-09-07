@@ -1,4 +1,5 @@
 import React from 'react';
+import './MainNav.scss';
 
 function MainNav() {
   return (
@@ -13,88 +14,88 @@ function MainNav() {
           type="text"
           placeholder="       Search"
         />
-        <div class="recentSearch">
-          <div class="recentTextBox">
-            <span class="recentText">Recent</span>
-            <span class="clearAll">Clear all</span>
+        <div className="recentSearch">
+          <div className="recentTextBox">
+            <span className="recentText">Recent</span>
+            <span className="clearAll">Clear all</span>
           </div>
-          <div class="recentProfileBox">
-            <div class="recentProfile" id="recent1">
+          <div className="recentProfileBox">
+            <div className="recentProfile" id="recent1">
               <img
-                class="recentProfilePic"
+                className="recentProfilePic"
                 src="/images/juwon/recentPic1.jpeg"
                 alt="recentPic1"
               />
-              <div class="recentNickBox">
-                <div class="recentNickName" />
-                <div class="recentName">위코드 짱</div>
+              <div className="recentNickBox">
+                <div className="recentNickName" />
+                <div className="recentName">위코드 짱</div>
               </div>
               <img
-                class="closeBtn"
+                className="closeBtn"
                 src="/images/juwon/closeBig.png"
                 alt="closeBig"
               />
             </div>
-            <div class="recentProfile" id="recent2">
+            <div className="recentProfile" id="recent2">
               <img
-                class="recentProfilePic"
+                className="recentProfilePic"
                 src="/images/juwon/recentPic2.jpeg"
                 alt="recentPic2"
               />
-              <div class="recentNickBox">
-                <div class="recentNickName" />
-                <div class="recentName">짱짱맨</div>
+              <div className="recentNickBox">
+                <div className="recentNickName" />
+                <div className="recentName">짱짱맨</div>
               </div>
               <img
-                class="closeBtn"
+                className="closeBtn"
                 src="/images/juwon/closeBig.png"
                 alt="closeBig"
               />
             </div>
-            <div class="recentProfile" id="recent3">
+            <div className="recentProfile" id="recent3">
               <img
-                class="recentProfilePic"
+                className="recentProfilePic"
                 src="/images/juwon/recentPic3.jpeg"
                 alt="recentPic3"
               />
-              <div class="recentNickBox">
-                <div class="recentNickName" />
-                <div class="recentName" />
+              <div className="recentNickBox">
+                <div className="recentNickName" />
+                <div className="recentName" />
               </div>
               <img
-                class="closeBtn"
+                className="closeBtn"
                 src="/images/juwon/closeBig.png"
                 alt="closeBig"
               />
             </div>
-            <div class="recentProfile" id="recent4">
+            <div className="recentProfile" id="recent4">
               <img
-                class="recentProfilePic"
+                className="recentProfilePic"
                 src="/images/juwon/recentPic4.jpeg"
                 alt="recentPic4"
               />
-              <div class="recentNickBox">
-                <div class="recentNickName" />
-                <div class="recentName">CSS 하기싫다</div>
+              <div className="recentNickBox">
+                <div className="recentNickName" />
+                <div className="recentName">CSS 하기싫다</div>
               </div>
               <img
-                class="closeBtn"
+                className="closeBtn"
                 src="/images/juwon/closeBig.png"
                 alt="closeBig"
               />
             </div>
-            <div class="recentProfile" id="recent5">
+            <div className="recentProfile" id="recent5">
               <img
-                class="recentProfilePic"
+                className="recentProfilePic"
                 src="/images/juwon/recentPic5.jpeg"
                 alt="recentPic5"
               />
-              <div class="recentNickBox">
-                <div class="recentNickName" />
-                <div class="recentName">그쵸?</div>
+              <div className="recentNickBox">
+                <div className="recentNickName" />
+                <div className="recentName">그쵸?</div>
               </div>
               <img
-                class="closeBtn"
+                className="closeBtn"
                 src="/images/juwon/closeBig.png"
                 alt="closeBig"
               />

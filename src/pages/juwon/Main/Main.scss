@@ -509,11 +509,15 @@ body {
   width: 319px;
   height: 40px;
   margin-top: 15px;
-}
 
-.links a:hover {
-  cursor: pointer;
-  text-decoration: underline;
+  a {
+    margin: 2px;
+  }
+
+  a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }
 
 .company {

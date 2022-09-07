@@ -1,7 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './login.scss';
+import { useState, useEffect } from 'react';
+import './Login.scss';
 
 function LoginJuwon() {
   const navigate = useNavigate();
@@ -11,6 +11,7 @@ function LoginJuwon() {
     userPw: '',
   });
   const { userId, userPw } = inputValue;
+
   const [disabled, setDisabled] = useState(true);
 
   const inputChange = event => {
@@ -28,9 +29,25 @@ function LoginJuwon() {
     if (userId === '' && userPw === '') {
       return;
     }
-    if (userId.includes('@') && userPw.length >= 5) {
-      navigate('/main/juwon');
-    }
+
+    fetch('http://10.58.2.86:3000/auth/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({
+        email: userId,
+        password: userPw,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        if (data.message === 'SUCCESS') {
+          localStorage.setItem(data.userName, data.accessToken);
+          navigate('/main/juwon');
+        } else if (data.message === 'FAIL') {
+          alert('회원정보가 잘못되었습니다. 다시 입력해주세요.');
+        }
+      });
   };
 
   return (

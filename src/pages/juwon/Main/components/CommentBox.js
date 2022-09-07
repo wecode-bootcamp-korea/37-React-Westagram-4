@@ -6,13 +6,14 @@ function CommentBox() {
   const [comments, setComments] = useState([]);
   const [postBtn, setPostBtn] = useState('commentPostDisabled');
   const onKeyUp = event => {
-    if (inputValue.length === 0) {
-      setPostBtn(current => 'commentPostDisabled');
-    } else {
-      setPostBtn(current => 'commentPostEnabled');
-    }
     setInputValue(event.target.value);
+    if (comment.length === 0) {
+      setPostBtn('commentPostDisabled');
+    } else {
+      setPostBtn('commentPostEnabled');
+    }
   };
+  const comment = inputValue;
   const onSubmit = event => {
     event.preventDefault();
     if (inputValue === '') {
@@ -69,7 +70,8 @@ function CommentBox() {
       <form className="commentInputBox" onSubmit={onSubmit}>
         <img className="emoticon" src="/images/juwon/smile.png" alt="smile" />
         <input
-          onKeyUp={onKeyUp}
+          onChange={onKeyUp}
+          value={comment}
           className="commentInput"
           type="text"
           placeholder="Add a comment..."

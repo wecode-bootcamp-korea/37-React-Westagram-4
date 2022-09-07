@@ -94,8 +94,11 @@ function SideContents() {
       </div>
       <div className="rightBottomBox">
         <div className="links">
-          <a>About </a>· <a>Help </a>· <a>Press </a>· <a>API </a>·<a>Jobs </a>·
-          <a>Privacy </a>· <a>Terms </a>· <a>Location </a>·<a>Language </a>
+          {FOOTER_INFO_LIST.map(el => (
+            <a id={el.id} link={el.link} key={el.id}>
+              · {el.text}
+            </a>
+          ))}
         </div>
         <div className="company">@ 2022 INSTAGRAM FROM META</div>
       </div>
@@ -104,3 +107,27 @@ function SideContents() {
 }
 
 export default SideContents;
+
+const FOOTER_INFO_LIST = [
+  { id: 1, link: 'https://about.instagram.com/', text: 'About' },
+  { id: 1, link: 'https://help.instagram.com/', text: 'Help' },
+  { id: 1, link: 'https://about.instagram.com/blog/', text: 'Press' },
+  {
+    id: 1,
+    link: 'https://developers.facebook.com/docs/instagram',
+    text: 'API',
+  },
+  { id: 1, link: 'https://about.instagram.com/about-us/careers', text: 'Jobs' },
+  {
+    id: 1,
+    link: 'https://privacycenter.instagram.com/policy/?entry_point=ig_help_center_data_policy_redirect',
+    text: 'Privacy',
+  },
+  { id: 1, link: 'https://help.instagram.com/581066165581870', text: 'Terms' },
+  {
+    id: 1,
+    link: 'https://www.instagram.com/explore/locations/',
+    text: 'Location',
+  },
+  { id: 1, link: 'https://about.instagram.com/', text: 'Language' },
+];

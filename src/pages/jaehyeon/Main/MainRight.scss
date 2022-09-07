@@ -1,0 +1,144 @@
+/*---------------------우측 추천 박스 전체 구역--------------*/
+.main-right {
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .main-right-top {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    .top-profile {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(70deg, blue, pink);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+    }
+    .top-profile-text {
+      display: flex;
+      flex-direction: column;
+      margin-left: 5px;
+      span {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+// .main-right-top div:first-child .main-right-top div:nth-child(2) {
+//   margin-left: 5px;
+//   padding-top: 12px;
+// }
+
+/*<=============== main right mid =================>*/
+.main-right-mid {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border: 0px;
+  margin-top: 15px;
+  padding: 10px 0px 10px 0px;
+  border: 1px solid rgb(214, 209, 209);
+  .main-right-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 5px;
+  }
+  .recom-list {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    .recom-box {
+      display: flex;
+      align-items: center;
+      .img-box {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(70deg, blue, pink);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
+
+.recom-list div img {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/*-----------main right bottom----------*/
+.main-right-bot {
+  width: 100%;
+  height: 250px;
+  overflow: scroll;
+  border: 1px solid rgb(214, 209, 209);
+  margin-top: 10px;
+  .bot-title {
+    width: 260px;
+    overflow: hidden;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    div {
+      margin-left: 5px;
+    }
+  }
+  .mr-bot-box {
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    .recom-img-box {
+      background: linear-gradient(70deg, blue, pink);
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      img {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        border: 2px solid white;
+      }
+    }
+    .recom-txt-box {
+      margin-left: 10px;
+    }
+  }
+}
+
+.show-more {
+  min-height: 330px;
+  overflow: scroll;
+}
+#show-more:hover {
+  cursor: pointer;
+}

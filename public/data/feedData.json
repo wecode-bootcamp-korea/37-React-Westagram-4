@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "userName": "Jahyeon",
+    "userImg": "https://cdn.pixabay.com/photo/2021/09/22/08/35/architecture-6646154_1280.jpg",
+    "feedImg": "https://cdn.pixabay.com/photo/2022/08/23/06/55/village-7405160_1280.jpg",
+    "visitor": [
+      {
+        "id": "Bee",
+        "visitorName": "Bee",
+        "visitorImg": "https://cdn.pixabay.com/photo/2022/08/28/09/29/bee-7416162_1280.jpg",
+        "visitorComment": "ㅋㅋ  첫번째 굳",
+        "isLike": false
+      },
+      {
+        "id": "deer",
+        "visitorName": "Deer",
+        "visitorImg": "https://cdn.pixabay.com/photo/2016/05/02/13/17/deer-1367217_1280.jpg",
+        "visitorComment": "웩~웩~",
+        "isLike": false
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "userName": "Junsik",
+    "userImg": "https://cdn.pixabay.com/photo/2022/08/17/15/46/family-7392843_1280.jpg",
+    "feedImg": "https://cdn.pixabay.com/photo/2022/08/06/12/34/corsac-fox-7368515_1280.jpg",
+    "visitor": [
+      {
+        "id": "Rabbit",
+        "visitorName": "Rabbit",
+        "visitorImg": "https://cdn.pixabay.com/photo/2016/11/21/16/59/animal-1846462_1280.jpg",
+        "visitorComment": "ㅋㅋ 굳",
+        "isLike": false
+      },
+      {
+        "id": "Tiger",
+        "visitorName": "Tiger",
+        "visitorImg": "https://cdn.pixabay.com/photo/2017/11/06/09/53/tiger-2923186_1280.jpg",
+        "visitorComment": "야 토끼, 살아있냐? 조만간 한 번 보자",
+        "isLike": false
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "userName": "UmjiGongju",
+    "userImg": "https://cdn.pixabay.com/photo/2022/08/13/09/05/lion-7383228_1280.jpg",
+    "feedImg": "https://cdn.pixabay.com/photo/2022/08/10/06/15/birds-7376432_1280.jpg",
+    "visitor": [
+      {
+        "id": "Mr.Smile",
+        "visitorName": "Mr.Smile",
+        "visitorImg": "https://cdn.pixabay.com/photo/2015/08/02/20/57/caricature-871669_1280.jpg",
+        "visitorComment": "ㅎㅎ",
+        "isLike": false
+      }
+    ]
+  }
+]

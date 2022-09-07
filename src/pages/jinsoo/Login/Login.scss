@@ -1,71 +1,77 @@
-
-.main{
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: 1px solid rgb(230 230 230);
-	width: 450px;
-	height: 496px;
-	margin: 0 auto;
-	text-align: center;
-	margin-top: 200px;
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid rgb(230 230 230);
+  width: 450px;
+  height: 496px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 200px;
 }
 
-.logo{
-	font-family: 'Lobster Two';
-	font-size: 50px;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	
+.logo {
+  font-family: 'Lobster Two';
+  font-size: 50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 a {
-	text-decoration: none;
-  }
-
-.userid{
-	background:rgb(250 250 250);
-	border: 1px solid rgb(241 241 241);
-	width: 300px;
-	height: 36px;
-	margin-top: 10px;
-	padding-left: 8px;
-	color: rgb(152 152 152);
-	border-radius: 5px;
-  }
-
-.userpw{
-	background:rgb(250 250 250);
-	border: 1px solid rgb(241 241 241);
-	width: 300px;
-	height: 36px;
-	margin-top: 10px;
-	padding-left: 8px;
-	color: rgb(152 152 152);
-	border-radius: 5px;
-  }
- 
-
-.login{
-	background-color: rgb(65, 147, 239);
-	border: 1px solid rgb(209, 228, 250);
-	margin-top: 30px;
-	margin-bottom: 30px;
-	color: white;
-	width: 300px;
-	height: 36px;
-	border-radius: 5px;
-  }
-
-.login:disabled {
-	background-color: rgba(65, 147, 239, .3);
-  }
-  
-.last {
-	margin-top: 50px;
-  }
-
-.idontknow {
-	font-size: 13px;
+  text-decoration: none;
 }
 
+.userid {
+  background: rgb(250 250 250);
+  border: 1px solid rgb(241 241 241);
+  width: 300px;
+  height: 36px;
+  margin-top: 10px;
+  padding-left: 8px;
+  color: rgb(152 152 152);
+  border-radius: 5px;
+}
+
+.userpw {
+  background: rgb(250 250 250);
+  border: 1px solid rgb(241 241 241);
+  width: 300px;
+  height: 36px;
+  margin-top: 10px;
+  padding-left: 8px;
+  color: rgb(152 152 152);
+  border-radius: 5px;
+}
+
+.login {
+  background-color: rgb(65, 147, 239);
+  border: 1px solid rgb(209, 228, 250);
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: white;
+  width: 300px;
+  height: 36px;
+  border-radius: 5px;
+}
+
+.signup {
+  background-color: rgb(65, 147, 239);
+  border: 1px solid rgb(209, 228, 250);
+  color: white;
+  width: 300px;
+  height: 36px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.login:disabled {
+  background-color: rgba(65, 147, 239, 0.3);
+}
+
+.last {
+  margin-top: 50px;
+}
+
+.idontknow {
+  font-size: 13px;
+}

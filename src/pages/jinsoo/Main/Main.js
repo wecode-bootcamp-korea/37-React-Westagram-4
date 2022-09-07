@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Main.scss';
+// const [comment, setComment] = useState('');
+// const onChange = event => setComment(event.target.value);
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function MainJinsoo() {
@@ -35,10 +37,10 @@ function MainJinsoo() {
           <div className="story-wrapper">
             <div className="story">
               <ul>
-                <li className="storylist">macus rashford</li>
-                <li className="storylist">bruno fernandes</li>
-                <li className="storylist">victor lindelof</li>
-                <li className="storylist">luke shaw</li>
+                <li className="storylist">story</li>
+                <li className="storylist">story</li>
+                <li className="storylist">story</li>
+                <li className="storylist">story</li>
               </ul>
             </div>
           </div>
@@ -75,6 +77,10 @@ function MainJinsoo() {
                 ></img>
               </div>
             </article>
+            <div>하트 말풍선 비행기</div>
+            <div>좋아요</div>
+            <div>작성자</div>
+            <div>댓글</div>
           </div>
         </span>
         <span className="recommend">

@@ -5,6 +5,7 @@ import './login.scss';
 
 function LoginJuwon() {
   const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState({
     userId: '',
     userPw: '',
@@ -18,12 +19,12 @@ function LoginJuwon() {
 
   const isItValid = () => {
     if (userId.includes('@') && userPw.length >= 5) {
-      setDisabled(current => false);
-    } else setDisabled(current => true);
+      setDisabled(false);
+    } else setDisabled(true);
   };
 
   const login = event => {
-    event.preventDefalut();
+    event.preventDefault();
     if (userId === '' && userPw === '') {
       return;
     }
@@ -35,7 +36,7 @@ function LoginJuwon() {
   return (
     <div className="outerBox">
       <div className="titleBox">Westagram</div>
-      <form onSubmit={login}>
+      <form onSubmit={login} onKeyUp={isItValid}>
         <div className="inputBox">
           <input
             onChange={inputChange}
@@ -55,10 +56,7 @@ function LoginJuwon() {
           />
         </div>
         <div className="buttonBox hover">
-          <button
-            className={disabled ? 'buttonInavtive' : 'buttonActive'}
-            onKeyUp={isItValid}
-          >
+          <button className={disabled ? 'buttonInactive' : 'buttonActive'}>
             로그인
           </button>
         </div>

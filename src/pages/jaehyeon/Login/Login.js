@@ -29,11 +29,44 @@ function LoginJaehyeon() {
   // function saveUserId(e) {
   //   setIdValue(e.target.value);
   // }
+  const handleLogin = () => {
+    fetch('http://10.58.0.33:3000/auth/signin', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({
+        email: inputValues.email,
+        password: inputValues.password,
+      }),
+    }) //요청
+      .then(response => response.json())
+      .then(data => {
+        // if (data.accessToken) {
+        //   navigate('/Main/jaehyeon');
+        // }
+        data.accessToken
+          ? navigate('/Main/jaehyeon')
+          : alert('ID, PW 확인 요망');
 
-  let isValid =
-    inputValues.email.includes('@') && inputValues.password.length >= 5
-      ? false
-      : true;
+        return window.localStorage.setItem('token', data.accessToken);
+      });
+
+    // navigate('/Main/jaehyeon');
+  };
+  const handleSignUp = () => {
+    fetch('http://10.58.0.33:3000/auth/signup', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({
+        email: inputValues.email,
+        password: inputValues.password,
+      }),
+    }) //요청
+      .then(response => response.json())
+      .then(data => console.log(data.message));
+  };
+
+  const isValid =
+    inputValues.email.includes('@') && inputValues.password.length >= 5;
 
   return (
     <div className="Login">
@@ -55,14 +88,11 @@ function LoginJaehyeon() {
               placeholder="비밀번호"
               onChange={handleInput}
             />
-            <button
-              id="login-button"
-              disabled={isValid}
-              onClick={() => {
-                return navigate('/Main/jaehyeon');
-              }}
-            >
+            <button id="login-button" disabled={!isValid} onClick={handleLogin}>
               로그인
+            </button>
+            <button id="signup-button" onClick={handleSignUp}>
+              sign up
             </button>
           </div>
           <div className="divide-box">

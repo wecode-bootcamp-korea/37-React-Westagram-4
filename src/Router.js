@@ -8,6 +8,7 @@ import MainJaehyeon from './pages/jaehyeon/Main/Main';
 // 지윤님의 컴포넌트
 import LoginJieyoon from './pages/jieyoon/Login/Login';
 import MainJieyoon from './pages/jieyoon/Main/Main';
+import MemberJieyoon from './pages/jieyoon/Member/Member';
 // 진수님의 컴포넌트
 import LoginJinsoo from './pages/jinsoo/Login/Login';
 import MainJinsoo from './pages/jinsoo/Main/Main';
@@ -24,6 +25,7 @@ const Router = () => {
         <Route path="/Main/jaehyeon" element={<MainJaehyeon />} />
         <Route path="/Login/jieyoon" element={<LoginJieyoon />} />
         <Route path="/Main/jieyoon" element={<MainJieyoon />} />
+        <Route path="/Member/jieyoon" element={<MemberJieyoon />} />
         <Route path="/Login/jinsoo" element={<LoginJinsoo />} />
         <Route path="/Main/jinsoo" element={<MainJinsoo />} />
         <Route path="/Login/juwon" element={<LoginJuwon />} />

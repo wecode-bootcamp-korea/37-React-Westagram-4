@@ -7,12 +7,16 @@ function LoginJieyoon() {
   const [userId, setUserId] = useState('');
   const [userPassword, setUserPassword] = useState('');
 
+  if (localStorage.getItem('token')) {
+    navigate('/Main/jieyoon');
+  }
+
   const isEmail = email => {
     const emailRegex =
       /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
     return emailRegex.test(email);
   };
-  const MemberShip = e => {
+  const MemberShip = async e => {
     e.preventDefault();
 
     if (!isEmail(userId)) {
@@ -21,7 +25,29 @@ function LoginJieyoon() {
     } else if (userPassword < 8) {
       alert('패스워드는 8자 이상입니다.');
     } else {
-      navigate('/Main/jieyoon');
+      await fetch('http://10.58.2.26:3000/auth/signin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8',
+        },
+        body: JSON.stringify({ email: userId, password: userPassword }),
+      })
+        .then(res => {
+          if (res.ok) {
+            return res.json();
+          }
+          throw new Error('백엔드 실수');
+        })
+        .catch(error => console(error))
+        .then(data => {
+          if (data.accessToken) {
+            localStorage.setItem('token', data.accessToken);
+            alert('백엔드 때매 느렸지만 내가해냈다');
+            navigate('/Main/jieyoon');
+          } else {
+            alert('백엔드 실수가 잦다.');
+          }
+        });
     }
   };
 
@@ -73,6 +99,16 @@ function LoginJieyoon() {
                 >
                   로그인
                 </button>
+                <button
+                  type="submit"
+                  className="loginBtn"
+                  disabled={!isValid}
+                  style={{
+                    background: isValid ? 'skyBlue' : 'rgb(244, 244, 244)',
+                  }}
+                >
+                  로그인
+                </button>
               </form>
 
               <div className="dotLine">
@@ -92,7 +128,7 @@ function LoginJieyoon() {
             </div>
 
             <div className="idCreate">
-              계정이 없으신가요?<Link to="/Member"> 가입하기</Link>
+              계정이 없으신가요?<Link to="/Member/jieyoon"> 가입하기</Link>
             </div>
             <div className="App">
               <div className="AppDown">앱을 다운로드 하세요.</div>

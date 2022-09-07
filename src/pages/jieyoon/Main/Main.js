@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReplyBoard from './ReplyBoard';
 import { Link } from 'react-router-dom';
 import './Main.scss';
@@ -22,6 +22,10 @@ function MainJieyoon() {
   const deleted = e => {
     e.target.parentNode.remove();
   };
+
+  // useEffect(()=>{
+  //   fetch(/feed)
+  // })
 
   return (
     <div className="bodyz">
@@ -125,6 +129,7 @@ function MainJieyoon() {
       </header>
       <div className="mainFooter">
         <main>
+          {/* ----------------------------------------------------------------리플----------------------------------------------- */}
           <div className="mainTop">
             <div className="mainUser">
               <img
@@ -192,7 +197,6 @@ function MainJieyoon() {
             </ul>
             <p>42분 전</p>
           </div>
-          {/* ----------------------------------------------------------------리플----------------------------------------------- */}
           <form className="reply">
             <div className="inputLeft">
               <input
@@ -209,9 +213,9 @@ function MainJieyoon() {
               >
                 게시
               </button>
-              {/* ----------------------------------------------------------------리플----------------------------------------------- */}
             </div>
           </form>
+          {/* ----------------------------------------------------------------리플----------------------------------------------- */}
         </main>
         <div className="sideFooter">
           <aside>

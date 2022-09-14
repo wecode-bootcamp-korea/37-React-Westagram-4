@@ -1,20 +1,55 @@
+import { faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Login.scss';
-// import { useNavigate } from 'react-router-dom';
-// import { Link } from 'react-router-dom';
 
 function LoginJinsoo() {
-  const [isUserId, setUserId] = useState('');
-  const saveUserId = event => {
-    console.log(event.target.value);
-    setUserId(event.target.value);
+  // 로그인 콘솔
+  // const [isUserId, setUserId] = useState('');
+  // const saveUserId = event => {
+  //   console.log(event.target.value);
+  //   setUserId(event.target.value);
+  // };
+
+  // const [isUserPw, setUserPw] = useState('');
+  // const saveUserPw = event => {
+  //   console.log(event.target.value);
+  //   setUserPw(event.target.value);
+  // };
+  // 로그인 콘솔
+
+  // 로그인 버튼 활성화 비활성화
+
+  let [active, setActive] = useState(false);
+
+  let [idValue, setIdInput] = useState('');
+  let [pwValue, setPwInput] = useState('');
+
+  const navigate = useNavigate();
+
+  const goToMain = () => {
+    if (idValue.includes('@') && pwValue.length >= 5) {
+      navigate('/Main/jinsoo');
+    } else {
+      alert(' 땡 ! ');
+    }
   };
 
-  const [isUserPw, setUserPw] = useState('');
-  const saveUserPw = event => {
-    console.log(event.target.value);
-    setUserPw(event.target.value);
+  const ActiveIsPassedLogin = () => {
+    return idValue.includes('@') && pwValue.length >= 5
+      ? setActive(true)
+      : setActive(false);
   };
+
+  const handleId = e => {
+    setIdInput(e.target.value);
+  };
+  const handlePw = e => {
+    setPwInput(e.target.value);
+  };
+
+  // 로그인 버튼 활성화 비활성화
 
   // const handleSigninBtn = event => {
   //   event.preventDefault();
@@ -53,43 +88,49 @@ function LoginJinsoo() {
       <div className="main">
         <div>
           <div>
-            <h1 className="logo">Westagram</h1>
+            <h1 className="logo">Jinsootagram</h1>
           </div>
           <div>
             <input
               type="text"
               name="userID"
+              id="id"
               placeholder="전화번호, 사용자 이름 또는 이메일"
               className="userid"
-              value={isUserId}
-              onChange={saveUserId}
+              // value={isUserId}
+              // onChange={saveUserId}
+              onChange={handleId}
+              onKeyUp={ActiveIsPassedLogin}
               // onClick={handleSigninBtn}
             />
             <br />
             <input
               type="password"
               name="userpassword"
+              id="pw"
               placeholder="비밀번호"
               className="userpw"
-              value={isUserPw}
-              onChange={saveUserPw}
+              // value={isUserPw}
+              // onChange={saveUserPw}
+              onChange={handlePw}
+              onKeyUp={ActiveIsPassedLogin}
               // onClick={handleSigninBtn}
             />
             <br />
           </div>
           <div>
-            {/* <button
-              className="signup"
-              // onClick={handleSignupBtn}
+            <button
+              // className="login"
+              className={"active ? 'activeLoginBtn' : 'loginBtn' login"}
+              // login
+              onClick={goToMain}
+              disabled={idValue === '' || pwValue === '' ? true : false}
             >
-              회원가입
-            </button> */}
-            <button className="login" disabled>
               로그인
             </button>
           </div>
           <div className="last">
-            <a href="" className="idontknow">
+            <a href="#" className="idontknow">
               비밀번호를 잊으셨나요 ?
             </a>
           </div>

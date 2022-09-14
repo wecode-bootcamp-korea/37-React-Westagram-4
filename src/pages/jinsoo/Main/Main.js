@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
-import './Main.scss';
-// const [comment, setComment] = useState('');
-// const onChange = event => setComment(event.target.value);
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Main.scss';
 
 function MainJinsoo() {
+  const [names, setNames] = useState([]);
+  const [input, setInput] = useState('');
+
+  const handleInputChange = event => {
+    setInput(event.target.value);
+  };
+
+  const handleUpload = () => {
+    setNames(prevState => {
+      return [input, ...prevState];
+      // Input('');
+    });
+  };
+
   return (
-    <>
+    <div>
       <div className="bar">
         <div className="header">
           <div className="logo-wrapper">
@@ -38,9 +50,9 @@ function MainJinsoo() {
             <div className="story">
               <ul>
                 <li className="storylist">story</li>
-                <li className="storylist">story</li>
-                <li className="storylist">story</li>
-                <li className="storylist">story</li>
+                <li className="storylist"></li>
+                <li className="storylist"></li>
+                <li className="storylist"></li>
               </ul>
             </div>
           </div>
@@ -80,7 +92,22 @@ function MainJinsoo() {
             <div>하트 말풍선 비행기</div>
             <div>좋아요</div>
             <div>작성자</div>
-            <div>댓글</div>
+            <div className="comment">
+              {names.map((name, idx) => {
+                return <p key={idx}>{name}</p>;
+              })}
+            </div>
+            <div className="pushwrapper">
+              <input
+                type="text"
+                value={input}
+                className="commentinput"
+                onChange={handleInputChange}
+              />
+              <button className="push" onClick={handleUpload}>
+                게시
+              </button>
+            </div>
           </div>
         </span>
         <span className="recommend">
@@ -122,7 +149,6 @@ function MainJinsoo() {
               </div>
               <div className="player_name">
                 <div className="player_name_first">
-                  {' '}
                   <a href="https://www.instagram.com/sanchooo10/">
                     jadon_sancho
                   </a>
@@ -147,10 +173,9 @@ function MainJinsoo() {
               </div>
               <div className="player_name">
                 <div className="player_name_first">
-                  {' '}
                   <a href="https://www.instagram.com/cristiano/">
                     cristiano_ronaldo
-                  </a>{' '}
+                  </a>
                 </div>
                 <div className="player_name_second">회원님을 위한 추천</div>
               </div>
@@ -172,10 +197,8 @@ function MainJinsoo() {
               </div>
               <div className="player_name">
                 <div className="player_name_first">
-                  {' '}
                   <a href="https://www.instagram.com/raphaelvarane/">
-                    {' '}
-                    raphael_varane{' '}
+                    raphael_varane
                   </a>
                 </div>
                 <div className="player_name_second">회원님을 위한 추천</div>
@@ -198,10 +221,8 @@ function MainJinsoo() {
               </div>
               <div className="player_name">
                 <div className="player_name_first">
-                  {' '}
                   <a href="https://www.instagram.com/donnyvdbeek/">
-                    {' '}
-                    van_de_beek{' '}
+                    van_de_beek
                   </a>
                 </div>
                 <div className="player_name_second">회원님을 위한 추천</div>
@@ -228,7 +249,7 @@ function MainJinsoo() {
           </div>
         </span>
       </div>
-    </>
+    </div>
   );
 }
 

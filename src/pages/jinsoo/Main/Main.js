@@ -18,7 +18,7 @@ function MainJinsoo() {
   };
 
   return (
-    <div>
+    <div className="mainMain">
       <div className="bar">
         <div className="header">
           <div className="logo-wrapper">
@@ -27,7 +27,7 @@ function MainJinsoo() {
                 href="file:///Users/kangjinsoo/Desktop/wecode/westagram/main.html"
                 target="_self"
               >
-                Westagram
+                Jinsootagram
               </a>
             </span>
           </div>

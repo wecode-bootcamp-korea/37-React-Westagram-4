@@ -1,7 +1,6 @@
 import { faHeadphonesSimple } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, link } from 'react-router-dom';
 import './Login.scss';
 
 function LoginJinsoo() {
@@ -84,11 +83,13 @@ function LoginJinsoo() {
   // };
 
   return (
-    <div>
-      <div className="main">
+    <div className="main">
+      <div className="secondmain">
         <div>
           <div>
-            <h1 className="logo">Jinsootagram</h1>
+            <h1 className="logo">
+              <a href="/Login/Jinsoo">Jinsootagram</a>
+            </h1>
           </div>
           <div>
             <input
@@ -120,9 +121,7 @@ function LoginJinsoo() {
           </div>
           <div>
             <button
-              // className="login"
               className={"active ? 'activeLoginBtn' : 'loginBtn' login"}
-              // login
               onClick={goToMain}
               disabled={idValue === '' || pwValue === '' ? true : false}
             >

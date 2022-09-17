@@ -1,0 +1,431 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css';
+
+.bar {
+  display: flex;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  background-color: white;
+  width: 100%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.header {
+  width: 974px;
+  height: 60px;
+
+  align-items: center;
+  display: flex;
+}
+
+.logo_2 {
+  font-family: 'Lobster Two';
+  font-size: 25px;
+}
+
+.logo-wrapper {
+  margin-right: 0;
+  width: 40%;
+  text-align: left;
+}
+.search-wrapper {
+  width: 30%;
+}
+
+.search {
+  border-radius: 10px;
+  background-color: rgb(239, 239, 239);
+  border: none;
+  width: 100%;
+  height: 36px;
+  padding-left: 20px;
+  outline: none;
+}
+
+.profile {
+  width: 40%;
+  text-align: right;
+}
+
+i {
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.main2 {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  height: 1000px;
+  background-color: white;
+  margin-top: 61px;
+}
+
+a {
+  text-decoration-line: none;
+  color: black;
+}
+
+.feeds {
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 10px;
+  width: 100%;
+  height: 852px;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.tenhag_picture {
+  height: 587px;
+  width: 100%;
+}
+
+.wrapper {
+  width: 500px;
+}
+
+.feedname {
+  height: 58px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.mark {
+  height: 32px;
+  width: 32px;
+}
+
+.story-wrapper {
+  height: 117px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story {
+  height: 85px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recommend {
+  height: 833px;
+  width: 319px;
+  margin: 16px 16px 16px 25px;
+}
+
+.recommend_name {
+  margin: 25px 0px 10px;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.icon_wrapper .icon_wrapper2 .icon_wrapper3 {
+  display: inline-block;
+}
+
+.icon_wrapper {
+  width: 20%;
+}
+
+.icon_wrapper2 {
+  padding-left: 10px;
+  width: 70%;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.icon_wrapper3 {
+  text-align: right;
+  width: 10%;
+  font-size: 12px;
+}
+
+.tenhag_circle {
+  border-radius: 50%;
+  border: 1px solid rgb(219, 219, 219);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 1px; */
+}
+
+.tenhag_circle2 {
+  margin-top: 4px;
+}
+
+.tenhag_circle3 {
+  margin: 15px 0 15px 0;
+}
+
+.feedicon {
+  /* display: inline-block; */
+  margin: 8px 4px 8px 12px;
+}
+
+.feedinfo {
+  margin-left: 10px;
+}
+
+.mark {
+  border-radius: 50%;
+  border: 2px solid rgb(219, 219, 219);
+  padding: 3px;
+}
+
+.first_info {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.second_info {
+  font-size: 12px;
+}
+
+.foryourecommend {
+  font-size: 14px;
+  display: inline-block;
+  width: 70%;
+  color: rgb(142, 142, 142);
+  font-weight: bold;
+}
+
+.foryourecommend2 {
+  font-size: 12px;
+  display: inline-block;
+  width: 28%;
+  font-weight: bold;
+  text-align: right;
+}
+
+.sancho {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgb(219, 219, 219);
+  padding: 2px;
+}
+
+.ronaldo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgb(219, 219, 219);
+  padding: 2px;
+}
+
+.varane {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgb(219, 219, 219);
+  padding: 2px;
+}
+
+.vandebeek {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgb(219, 219, 219);
+  padding: 2px;
+}
+
+.player {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.player2 {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.player3 {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.player4 {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+}
+
+/* 플레이어1 시작 */
+
+.player_name {
+  display: inline-block;
+  width: 70%;
+}
+
+.player_name_first {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.player_name_second {
+  font-size: 12px;
+  padding-top: 5px;
+  color: rgb(136, 136, 136);
+}
+
+.player-img {
+  display: inline-block;
+  width: 15%;
+}
+
+.follow {
+  display: inline-block;
+  width: 15%;
+
+  text-align: right;
+}
+
+.follow-link {
+  color: rgb(8, 134, 241);
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.follow-link2 {
+  color: rgb(8, 134, 241);
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* 플레이어3 */
+
+.player_name3 {
+  display: inline-block;
+  width: 70%;
+}
+
+.player_name3_first {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.player_name3_second {
+  font-size: 12px;
+  padding-top: 5px;
+  color: rgb(136, 136, 136);
+}
+
+.player-img3 {
+  display: inline-block;
+  width: 15%;
+}
+
+.follow3 {
+  display: inline-block;
+  width: 15%;
+
+  text-align: right;
+}
+
+.follow-link3 {
+  color: rgb(8, 134, 241);
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* 플레이어4 */
+
+.player_name4 {
+  display: inline-block;
+  width: 70%;
+}
+
+.player_name4_first {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.player_name4_second {
+  font-size: 12px;
+  padding-top: 5px;
+  color: rgb(136, 136, 136);
+}
+
+.player-img4 {
+  display: inline-block;
+  width: 15%;
+}
+
+.follow4 {
+  display: inline-block;
+  width: 15%;
+
+  text-align: right;
+}
+
+.follow-link4 {
+  color: rgb(8, 134, 241);
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.add {
+  margin-top: 20px;
+}
+
+.addlist {
+  display: inline;
+  font-size: 12px;
+  color: #c7c7c7;
+  padding: 5px;
+  width: 100%;
+}
+
+.addlistalign {
+  float: left;
+  padding-left: 3px;
+}
+
+.storylist {
+  float: left;
+  font-size: 12px;
+}
+
+.commentinput {
+  width: 80%;
+  border: none;
+}
+
+.push {
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color: (19, 147, 256);
+}
+
+.pushwrapper {
+  border: 1px solid rgb(237, 237, 237);
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.comment {
+  width: 100%;
+  height: 100px;
+}
